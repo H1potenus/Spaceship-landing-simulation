@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lander Neuroevolution Testbed</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <div>
+        <div class="brand-title">PROPULSIVE LANDING TESTBED</div>
+        <div class="brand-sub">3-DoF RK4 dynamics &middot; MLP 10-16-12-2 &middot; Neuroevolution N=40</div>
+      </div>
+    </div>
+    <div class="top-stats">
+      <div class="stat"><span class="k">GEN</span><span class="v" id="hdr-gen">1</span></div>
+      <div class="stat"><span class="k">T+</span><span class="v" id="hdr-time">0.00 s</span></div>
+      <div class="stat"><span class="k">ALIVE</span><span class="v" id="hdr-alive">40</span></div>
+      <div class="stat good"><span class="k">LANDED</span><span class="v" id="hdr-landed">0</span></div>
+      <div class="stat bad"><span class="k">FAILED</span><span class="v" id="hdr-failed">0</span></div>
+      <div class="stat"><span class="k">BEST FIT</span><span class="v" id="hdr-best">&mdash;</span></div>
+    </div>
+    <div class="warp" id="warp">
+      <button data-speed="0" title="Space">Pause</button>
+      <button data-speed="0.5" title="1">0.5x</button>
+      <button data-speed="1" class="active" title="2">1x</button>
+      <button data-speed="5" title="3">5x</button>
+      <button data-speed="20" title="4">20x</button>
+      <button data-speed="100" title="5">100x</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- ================= LEFT: CONTROL PANEL ================= -->
+    <aside class="controls" id="controls">
+      <section class="card">
+        <h3>Time Control</h3>
+        <div class="readout-line"><span>Substeps / frame</span><b id="substeps">0</b></div>
+        <div class="readout-line"><span>Physics &Delta;t (fixed)</span><b id="dt-readout">0.010 s</b></div>
+        <div class="readout-line"><span>Sim rate</span><b id="simrate">1.0x</b></div>
+        <div class="btn-row">
+          <button id="turbo10" class="btn">Fast-Train +10</button>
+          <button id="turbo50" class="btn">Fast-Train +50</button>
+        </div>
+        <div class="turbo-status" id="turbo-status">Headless training idle</div>
+      </section>
+
+      <section class="card">
+        <h3>Visualization</h3>
+        <div class="seg" id="seg-view">
+          <button data-view="swarm" class="active">Parallel Swarm</button>
+          <button data-view="elite">Single Elite</button>
+        </div>
+        <div class="seg" id="seg-cam">
+          <button data-cam="follow" class="active">Follow Leader</button>
+          <button data-cam="field">Full Field</button>
+        </div>
+        <label class="check"><input type="checkbox" id="chk-vectors" checked> Force vectors &amp; CoM</label>
+        <label class="check"><input type="checkbox" id="chk-ghosts" checked> Milestone ghost paths</label>
+        <label class="check"><input type="checkbox" id="chk-wind" checked> Wind field</label>
+        <label class="check"><input type="checkbox" id="chk-trails" checked> Leader trajectory trail</label>
+        <button id="btn-fullscreen-2" class="btn full">Fullscreen simulation (F)</button>
+      </section>
+
+      <section class="card">
+        <h3>Environment &amp; Disturbances</h3>
+        <label class="field">Planet
+          <select id="sel-planet">
+            <option value="earth">Earth-like (g 9.81, &rho;&#8320; 1.225)</option>
+            <option value="mars">Mars (g 3.72, &rho;&#8320; 0.020)</option>
+            <option value="moon">Moon (g 1.62, vacuum)</option>
+            <option value="titan">Titan (g 1.35, &rho;&#8320; 5.43)</option>
+          </select>
+        </label>
+        <label class="field">Steady crosswind <b id="lbl-wind">0.0 m/s</b>
+          <input type="range" id="rng-wind" min="-20" max="20" step="0.5" value="0">
+        </label>
+        <label class="field">Turbulence intensity <b id="lbl-turb">0.0 m/s</b>
+          <input type="range" id="rng-turb" min="0" max="10" step="0.25" value="0">
+        </label>
+        <div class="sub-h">Perturbation test</div>
+        <div class="btn-row">
+          <select id="sel-impulse-target">
+            <option value="leader">Leader</option>
+            <option value="all">Whole swarm</option>
+          </select>
+          <button id="btn-impulse" class="btn warn" title="I">Apply Impulse</button>
+        </div>
+        <div class="sub-h">Hardware degradation</div>
+        <label class="check"><input type="checkbox" id="chk-thrustloss"> Main engine &minus;20% thrust</label>
+        <label class="check"><input type="checkbox" id="chk-noise"> Gaussian sensor noise</label>
+        <label class="field">Noise &sigma; (normalised) <b id="lbl-noise">0.030</b>
+          <input type="range" id="rng-noise" min="0" max="0.15" step="0.005" value="0.03">
+        </label>
+      </section>
+
+      <section class="card">
+        <h3>Evolution</h3>
+        <label class="field">Crossover operator
+          <select id="sel-crossover">
+            <option value="sbx">Simulated Binary (SBX, &eta;=12)</option>
+            <option value="uniform">Uniform</option>
+          </select>
+        </label>
+        <label class="field">Initial conditions
+          <select id="sel-scenario">
+            <option value="random">Randomised every generation</option>
+            <option value="fixed">Fixed scenario</option>
+          </select>
+        </label>
+        <div class="readout-line"><span>Mutation &sigma;</span><b id="ga-sigma">0.200</b></div>
+        <div class="readout-line"><span>Mutation rate</span><b id="ga-rate">0.100</b></div>
+        <div class="readout-line"><span>Adaptive state</span><b id="ga-mode">EXPLOIT</b></div>
+        <div class="readout-line"><span>Last gen landed / on pad</span><b id="ga-success">&mdash;</b></div>
+        <button id="btn-reset" class="btn danger full">Reset Training</button>
+      </section>
+
+      <section class="card">
+        <h3>Checkpoints &amp; Replay</h3>
+        <div id="checkpoints" class="checkpoints"><div class="muted">Checkpoints appear after Gen 1 completes.</div></div>
+        <button id="btn-resume" class="btn full accent hidden">Resume Training</button>
+      </section>
+
+      <section class="card help">
+        <h3>Keys</h3>
+        <div class="muted">Space pause &middot; 1-5 warp &middot; I impulse &middot; V swarm/elite &middot; C camera &middot; F fullscreen</div>
+      </section>
+    </aside>
+
+    <!-- ================= CENTRE: WORLD VIEW ================= -->
+    <section class="viewport card" id="viewport">
+      <canvas id="world"></canvas>
+      <button class="fs-btn" id="btn-fullscreen" title="Fullscreen (F)" aria-label="Toggle fullscreen">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path class="fs-enter" d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/><path class="fs-exit" d="M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5"/></svg>
+        <span id="fs-label">Fullscreen</span>
+      </button>
+    </section>
+
+    <!-- ================= RIGHT: NN + TELEMETRY ================= -->
+    <aside class="right">
+      <section class="card nn-card">
+        <h3>Leader Neural Network <span class="muted" id="nn-agent">agent #0</span></h3>
+        <canvas id="nn"></canvas>
+      </section>
+    </aside>
+
+    <!-- ================= BOTTOM: PLOTS ================= -->
+    <section class="plots">
+      <div class="card plot-card">
+        <h3>Fitness Convergence</h3>
+        <canvas id="plot-fitness"></canvas>
+      </div>
+      <div class="card plot-card">
+        <h3>Phase Portrait &middot; altitude vs v<sub>y</sub></h3>
+        <canvas id="plot-phase"></canvas>
+      </div>
+      <div class="card plot-card">
+        <h3>Actuators &amp; Attitude</h3>
+        <canvas id="plot-control"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/rng.js"></script>
+  <script src="js/environment.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/neural.js"></script>
+  <script src="js/evolution.js"></script>
+  <script src="js/simulation.js"></script>
+  <script src="js/canvasutil.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/nnviz.js"></script>
+  <script src="js/plots.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

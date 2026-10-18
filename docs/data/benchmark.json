@@ -1,0 +1,921 @@
+{
+ "episodes": 500,
+ "evalSeed": 424242,
+ "groups": {
+  "trained in calm air": [
+   {
+    "name": "Nominal (calm air)",
+    "meanSuccess": 0.9852000000000001,
+    "perRun": [
+     {
+      "run": "seed1",
+      "successRate": 1,
+      "meanTouchdownVy": 0.37232445574828216,
+      "meanFuelLeft": 0.585007535956049,
+      "meanPadMiss": 0.7916578935952202,
+      "outcomes": {
+       "LANDED": 500
+      }
+     },
+     {
+      "run": "seed2",
+      "successRate": 1,
+      "meanTouchdownVy": 1.0941309032005868,
+      "meanFuelLeft": 0.5290913273990384,
+      "meanPadMiss": 1.5160665496025436,
+      "outcomes": {
+       "LANDED": 500
+      }
+     },
+     {
+      "run": "seed3",
+      "successRate": 0.958,
+      "meanTouchdownVy": 0.2848813168508466,
+      "meanFuelLeft": 0.5583874720817306,
+      "meanPadMiss": 2.1011902210753717,
+      "outcomes": {
+       "LANDED": 479,
+       "HARD LANDING": 20,
+       "LOSS OF CONTROL": 1
+      }
+     },
+     {
+      "run": "seed4",
+      "successRate": 0.968,
+      "meanTouchdownVy": 0.19653207764645925,
+      "meanFuelLeft": 0.6207731165424777,
+      "meanPadMiss": 0.5567947953255395,
+      "outcomes": {
+       "LANDED": 484,
+       "HARD LANDING": 12,
+       "LOSS OF CONTROL": 4
+      }
+     },
+     {
+      "run": "seed5",
+      "successRate": 1,
+      "meanTouchdownVy": 0.3945259187501671,
+      "meanFuelLeft": 0.5350729825740799,
+      "meanPadMiss": 0.2979667839347097,
+      "outcomes": {
+       "LANDED": 500
+      }
+     }
+    ]
+   },
+   {
+    "name": "Crosswind 8 m/s",
+    "meanSuccess": 0.5884,
+    "perRun": [
+     {
+      "run": "seed1",
+      "successRate": 0.988,
+      "meanTouchdownVy": 1.191651101046501,
+      "meanFuelLeft": 0.6406133219992696,
+      "meanPadMiss": 4.7644309299919225,
+      "outcomes": {
+       "LANDED": 494,
+       "HARD LANDING": 6
+      }
+     },
+     {
+      "run": "seed2",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "HARD LANDING": 230,
+       "HULL STRIKE": 206,
+       "PLATFORM COLLISION": 44,
+       "TIP-OVER": 20
+      }
+     },
+     {
+      "run": "seed3",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "TIMEOUT": 500
+      }
+     },
+     {
+      "run": "seed4",
+      "successRate": 0.966,
+      "meanTouchdownVy": 0.11139001636532067,
+      "meanFuelLeft": 0.5771170435980449,
+      "meanPadMiss": 2.562515113030964,
+      "outcomes": {
+       "LANDED": 483,
+       "LOSS OF CONTROL": 5,
+       "HARD LANDING": 12
+      }
+     },
+     {
+      "run": "seed5",
+      "successRate": 0.988,
+      "meanTouchdownVy": 1.1363170785986147,
+      "meanFuelLeft": 0.6185694914509853,
+      "meanPadMiss": 7.1328037925495655,
+      "outcomes": {
+       "LANDED": 494,
+       "HARD LANDING": 6
+      }
+     }
+    ]
+   },
+   {
+    "name": "Crosswind 8 m/s + turbulence 3 m/s",
+    "meanSuccess": 0.5388,
+    "perRun": [
+     {
+      "run": "seed1",
+      "successRate": 0.886,
+      "meanTouchdownVy": 1.204050863567135,
+      "meanFuelLeft": 0.639413173296562,
+      "meanPadMiss": 4.7065142073547666,
+      "outcomes": {
+       "LANDED": 443,
+       "HARD LANDING": 57
+      }
+     },
+     {
+      "run": "seed2",
+      "successRate": 0.022,
+      "meanTouchdownVy": 1.5539579036577,
+      "meanFuelLeft": 0.5913721834026423,
+      "meanPadMiss": 9.063784435553659,
+      "outcomes": {
+       "HARD LANDING": 282,
+       "HULL STRIKE": 146,
+       "PLATFORM COLLISION": 48,
+       "LANDED": 11,
+       "TIP-OVER": 13
+      }
+     },
+     {
+      "run": "seed3",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "TIMEOUT": 500
+      }
+     },
+     {
+      "run": "seed4",
+      "successRate": 0.97,
+      "meanTouchdownVy": 0.2431843071158909,
+      "meanFuelLeft": 0.5916202979842317,
+      "meanPadMiss": 2.4125652009531664,
+      "outcomes": {
+       "LANDED": 485,
+       "LOSS OF CONTROL": 4,
+       "HARD LANDING": 9,
+       "HULL STRIKE": 1,
+       "PLATFORM COLLISION": 1
+      }
+     },
+     {
+      "run": "seed5",
+      "successRate": 0.816,
+      "meanTouchdownVy": 1.190811176308196,
+      "meanFuelLeft": 0.6189625475332405,
+      "meanPadMiss": 7.219752124521771,
+      "outcomes": {
+       "LANDED": 408,
+       "HARD LANDING": 90,
+       "LOSS OF CONTROL": 1,
+       "HULL STRIKE": 1
+      }
+     }
+    ]
+   },
+   {
+    "name": "20 % thrust loss",
+    "meanSuccess": 0.5955999999999999,
+    "perRun": [
+     {
+      "run": "seed1",
+      "successRate": 0.822,
+      "meanTouchdownVy": 1.8957544078853452,
+      "meanFuelLeft": 0.6478282136278545,
+      "meanPadMiss": 1.7056651560419032,
+      "outcomes": {
+       "LANDED": 411,
+       "HARD LANDING": 86,
+       "HULL STRIKE": 3
+      }
+     },
+     {
+      "run": "seed2",
+      "successRate": 0.088,
+      "meanTouchdownVy": 1.843306543790253,
+      "meanFuelLeft": 0.6243307964469257,
+      "meanPadMiss": 3.1916533139629664,
+      "outcomes": {
+       "HARD LANDING": 452,
+       "HULL STRIKE": 3,
+       "LANDED": 44,
+       "PLATFORM COLLISION": 1
+      }
+     },
+     {
+      "run": "seed3",
+      "successRate": 0.676,
+      "meanTouchdownVy": 0.7702342312289706,
+      "meanFuelLeft": 0.6482031818077415,
+      "meanPadMiss": 4.445587298257962,
+      "outcomes": {
+       "LANDED": 338,
+       "HARD LANDING": 150,
+       "LOSS OF CONTROL": 12
+      }
+     },
+     {
+      "run": "seed4",
+      "successRate": 0.392,
+      "meanTouchdownVy": 0.8883160225520637,
+      "meanFuelLeft": 0.7239248625167548,
+      "meanPadMiss": 2.1516549162140937,
+      "outcomes": {
+       "HARD LANDING": 290,
+       "LANDED": 196,
+       "LOSS OF CONTROL": 13,
+       "PLATFORM COLLISION": 1
+      }
+     },
+     {
+      "run": "seed5",
+      "successRate": 1,
+      "meanTouchdownVy": 1.0751525422803516,
+      "meanFuelLeft": 0.6071531600931797,
+      "meanPadMiss": 0.8177644204828333,
+      "outcomes": {
+       "LANDED": 500
+      }
+     }
+    ]
+   },
+   {
+    "name": "Sensor noise sigma = 0.03",
+    "meanSuccess": 0.9848000000000001,
+    "perRun": [
+     {
+      "run": "seed1",
+      "successRate": 1,
+      "meanTouchdownVy": 0.42056268561402177,
+      "meanFuelLeft": 0.5704874069816442,
+      "meanPadMiss": 0.9456332243306872,
+      "outcomes": {
+       "LANDED": 500
+      }
+     },
+     {
+      "run": "seed2",
+      "successRate": 1,
+      "meanTouchdownVy": 1.1493726428871063,
+      "meanFuelLeft": 0.5298374729615498,
+      "meanPadMiss": 1.4630644802372663,
+      "outcomes": {
+       "LANDED": 500
+      }
+     },
+     {
+      "run": "seed3",
+      "successRate": 0.958,
+      "meanTouchdownVy": 0.35166634902556027,
+      "meanFuelLeft": 0.5586091115357439,
+      "meanPadMiss": 1.9717341984663022,
+      "outcomes": {
+       "LANDED": 479,
+       "HARD LANDING": 20,
+       "LOSS OF CONTROL": 1
+      }
+     },
+     {
+      "run": "seed4",
+      "successRate": 0.966,
+      "meanTouchdownVy": 0.2549086519054813,
+      "meanFuelLeft": 0.6155645161197157,
+      "meanPadMiss": 0.5831350885597892,
+      "outcomes": {
+       "LANDED": 483,
+       "LOSS OF CONTROL": 5,
+       "HARD LANDING": 11,
+       "PLATFORM COLLISION": 1
+      }
+     },
+     {
+      "run": "seed5",
+      "successRate": 1,
+      "meanTouchdownVy": 0.39424121306845894,
+      "meanFuelLeft": 0.5243973078415096,
+      "meanPadMiss": 0.37261846900082884,
+      "outcomes": {
+       "LANDED": 500
+      }
+     }
+    ]
+   },
+   {
+    "name": "Sensor noise sigma = 0.10",
+    "meanSuccess": 0.9252,
+    "perRun": [
+     {
+      "run": "seed1",
+      "successRate": 0.932,
+      "meanTouchdownVy": 0.8103602694465425,
+      "meanFuelLeft": 0.5358058011375242,
+      "meanPadMiss": 0.9316902370435376,
+      "outcomes": {
+       "LANDED": 466,
+       "HARD LANDING": 33,
+       "TIMEOUT": 1
+      }
+     },
+     {
+      "run": "seed2",
+      "successRate": 0.962,
+      "meanTouchdownVy": 1.3426034957777833,
+      "meanFuelLeft": 0.5387653475970933,
+      "meanPadMiss": 1.0027829504414727,
+      "outcomes": {
+       "LANDED": 481,
+       "HARD LANDING": 19
+      }
+     },
+     {
+      "run": "seed3",
+      "successRate": 0.774,
+      "meanTouchdownVy": 0.7373042232806489,
+      "meanFuelLeft": 0.5800124736356654,
+      "meanPadMiss": 1.3713676053610295,
+      "outcomes": {
+       "HARD LANDING": 112,
+       "LANDED": 387,
+       "LOSS OF CONTROL": 1
+      }
+     },
+     {
+      "run": "seed4",
+      "successRate": 0.958,
+      "meanTouchdownVy": 0.5129802252313399,
+      "meanFuelLeft": 0.6141679865456036,
+      "meanPadMiss": 1.221595033207482,
+      "outcomes": {
+       "LANDED": 479,
+       "LOSS OF CONTROL": 5,
+       "HARD LANDING": 16
+      }
+     },
+     {
+      "run": "seed5",
+      "successRate": 1,
+      "meanTouchdownVy": 0.5768145246294416,
+      "meanFuelLeft": 0.5057325880934591,
+      "meanPadMiss": 0.8354241857675382,
+      "outcomes": {
+       "LANDED": 500
+      }
+     }
+    ]
+   },
+   {
+    "name": "Mars (g = 3.72, thin air)",
+    "meanSuccess": 0,
+    "perRun": [
+     {
+      "run": "seed1",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "TIMEOUT": 391,
+       "HARD LANDING": 10,
+       "LOSS OF CONTROL": 99
+      }
+     },
+     {
+      "run": "seed2",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "TIMEOUT": 448,
+       "LOSS OF CONTROL": 49,
+       "HARD LANDING": 3
+      }
+     },
+     {
+      "run": "seed3",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "TIMEOUT": 463,
+       "LOSS OF CONTROL": 37
+      }
+     },
+     {
+      "run": "seed4",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "TIMEOUT": 500
+      }
+     },
+     {
+      "run": "seed5",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "TIMEOUT": 467,
+       "LOSS OF CONTROL": 33
+      }
+     }
+    ]
+   }
+  ],
+  "trained in wind + turbulence": [
+   {
+    "name": "Nominal (calm air)",
+    "meanSuccess": 0.6288,
+    "perRun": [
+     {
+      "run": "windseed1",
+      "successRate": 0.994,
+      "meanTouchdownVy": 0.6328190458565489,
+      "meanFuelLeft": 0.48652856815103546,
+      "meanPadMiss": 3.915516988724453,
+      "outcomes": {
+       "LANDED": 497,
+       "HARD LANDING": 3
+      }
+     },
+     {
+      "run": "windseed2",
+      "successRate": 0.932,
+      "meanTouchdownVy": 1.36763914648941,
+      "meanFuelLeft": 0.6490628529001176,
+      "meanPadMiss": 3.6175381297042675,
+      "outcomes": {
+       "LANDED": 466,
+       "HARD LANDING": 34
+      }
+     },
+     {
+      "run": "windseed3",
+      "successRate": 0.46,
+      "meanTouchdownVy": 0.960355570503581,
+      "meanFuelLeft": 0.577359185885472,
+      "meanPadMiss": 2.1556840293590898,
+      "outcomes": {
+       "LANDED": 230,
+       "LOSS OF CONTROL": 70,
+       "HARD LANDING": 199,
+       "PLATFORM COLLISION": 1
+      }
+     },
+     {
+      "run": "windseed4",
+      "successRate": 0.758,
+      "meanTouchdownVy": 0.14527712434914045,
+      "meanFuelLeft": 0.5684842078771434,
+      "meanPadMiss": 5.69274128346957,
+      "outcomes": {
+       "HARD LANDING": 110,
+       "LANDED": 379,
+       "HULL STRIKE": 5,
+       "PLATFORM COLLISION": 5,
+       "TIP-OVER": 1
+      }
+     },
+     {
+      "run": "windseed5",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "TIMEOUT": 491,
+       "HULL STRIKE": 9
+      }
+     }
+    ]
+   },
+   {
+    "name": "Crosswind 8 m/s",
+    "meanSuccess": 0.9592,
+    "perRun": [
+     {
+      "run": "windseed1",
+      "successRate": 0.998,
+      "meanTouchdownVy": 0.5588807178709607,
+      "meanFuelLeft": 0.4990025050980738,
+      "meanPadMiss": 0.6514453788106159,
+      "outcomes": {
+       "LANDED": 499,
+       "HARD LANDING": 1
+      }
+     },
+     {
+      "run": "windseed2",
+      "successRate": 0.98,
+      "meanTouchdownVy": 1.1516328098604651,
+      "meanFuelLeft": 0.6530676847672893,
+      "meanPadMiss": 5.2253718418068695,
+      "outcomes": {
+       "LANDED": 490,
+       "HARD LANDING": 9,
+       "TIMEOUT": 1
+      }
+     },
+     {
+      "run": "windseed3",
+      "successRate": 0.87,
+      "meanTouchdownVy": 0.8153564040295992,
+      "meanFuelLeft": 0.5600462597959756,
+      "meanPadMiss": 0.3212255268272256,
+      "outcomes": {
+       "LANDED": 435,
+       "LOSS OF CONTROL": 20,
+       "HARD LANDING": 41,
+       "HULL STRIKE": 1,
+       "PLATFORM COLLISION": 3
+      }
+     },
+     {
+      "run": "windseed4",
+      "successRate": 0.974,
+      "meanTouchdownVy": 0.040744545835334794,
+      "meanFuelLeft": 0.495967963058079,
+      "meanPadMiss": 1.504931689189694,
+      "outcomes": {
+       "LANDED": 487,
+       "TIP-OVER": 1,
+       "HARD LANDING": 12
+      }
+     },
+     {
+      "run": "windseed5",
+      "successRate": 0.974,
+      "meanTouchdownVy": 0.7333238468591665,
+      "meanFuelLeft": 0.6387574902696264,
+      "meanPadMiss": 2.8464066088906206,
+      "outcomes": {
+       "LANDED": 487,
+       "LOSS OF CONTROL": 6,
+       "TIMEOUT": 7
+      }
+     }
+    ]
+   },
+   {
+    "name": "Crosswind 8 m/s + turbulence 3 m/s",
+    "meanSuccess": 0.9555999999999999,
+    "perRun": [
+     {
+      "run": "windseed1",
+      "successRate": 1,
+      "meanTouchdownVy": 0.5887185880060103,
+      "meanFuelLeft": 0.49884619400970825,
+      "meanPadMiss": 0.9727423496930645,
+      "outcomes": {
+       "LANDED": 500
+      }
+     },
+     {
+      "run": "windseed2",
+      "successRate": 0.966,
+      "meanTouchdownVy": 1.2393197602965695,
+      "meanFuelLeft": 0.6532582678932329,
+      "meanPadMiss": 5.398701045581524,
+      "outcomes": {
+       "LANDED": 483,
+       "HARD LANDING": 15,
+       "HULL STRIKE": 2
+      }
+     },
+     {
+      "run": "windseed3",
+      "successRate": 0.866,
+      "meanTouchdownVy": 0.8144641224969904,
+      "meanFuelLeft": 0.5593348345758627,
+      "meanPadMiss": 0.4490793778315206,
+      "outcomes": {
+       "LANDED": 433,
+       "LOSS OF CONTROL": 23,
+       "HARD LANDING": 43,
+       "PLATFORM COLLISION": 1
+      }
+     },
+     {
+      "run": "windseed4",
+      "successRate": 0.976,
+      "meanTouchdownVy": 0.1947897392616187,
+      "meanFuelLeft": 0.5114797041057441,
+      "meanPadMiss": 1.7262721327519917,
+      "outcomes": {
+       "LANDED": 488,
+       "HARD LANDING": 12
+      }
+     },
+     {
+      "run": "windseed5",
+      "successRate": 0.97,
+      "meanTouchdownVy": 0.7753466152314069,
+      "meanFuelLeft": 0.6381026937773621,
+      "meanPadMiss": 2.9689152465617794,
+      "outcomes": {
+       "LANDED": 485,
+       "LOSS OF CONTROL": 5,
+       "TIMEOUT": 10
+      }
+     }
+    ]
+   },
+   {
+    "name": "20 % thrust loss",
+    "meanSuccess": 0.1572,
+    "perRun": [
+     {
+      "run": "windseed1",
+      "successRate": 0.288,
+      "meanTouchdownVy": 0.5549456309915172,
+      "meanFuelLeft": 0.591916702165786,
+      "meanPadMiss": 6.691505023878616,
+      "outcomes": {
+       "LANDED": 144,
+       "HARD LANDING": 235,
+       "HULL STRIKE": 109,
+       "PLATFORM COLLISION": 8,
+       "TIP-OVER": 4
+      }
+     },
+     {
+      "run": "windseed2",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "HARD LANDING": 497,
+       "HULL STRIKE": 2,
+       "PLATFORM COLLISION": 1
+      }
+     },
+     {
+      "run": "windseed3",
+      "successRate": 0.196,
+      "meanTouchdownVy": 1.4652169276745381,
+      "meanFuelLeft": 0.6043123624291884,
+      "meanPadMiss": 3.0333378473444026,
+      "outcomes": {
+       "HARD LANDING": 278,
+       "LOSS OF CONTROL": 107,
+       "LANDED": 98,
+       "PLATFORM COLLISION": 17
+      }
+     },
+     {
+      "run": "windseed4",
+      "successRate": 0.302,
+      "meanTouchdownVy": 0.6698446502466887,
+      "meanFuelLeft": 0.6660996662236373,
+      "meanPadMiss": 6.421309706029967,
+      "outcomes": {
+       "HARD LANDING": 343,
+       "LANDED": 151,
+       "HULL STRIKE": 3,
+       "PLATFORM COLLISION": 3
+      }
+     },
+     {
+      "run": "windseed5",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "PLATFORM COLLISION": 454,
+       "TIMEOUT": 42,
+       "LOSS OF CONTROL": 3,
+       "HARD LANDING": 1
+      }
+     }
+    ]
+   },
+   {
+    "name": "Sensor noise sigma = 0.03",
+    "meanSuccess": 0.568,
+    "perRun": [
+     {
+      "run": "windseed1",
+      "successRate": 0.99,
+      "meanTouchdownVy": 0.6428287871856678,
+      "meanFuelLeft": 0.4859737916825311,
+      "meanPadMiss": 3.83221047594652,
+      "outcomes": {
+       "LANDED": 495,
+       "HARD LANDING": 5
+      }
+     },
+     {
+      "run": "windseed2",
+      "successRate": 0.662,
+      "meanTouchdownVy": 1.4838168028323317,
+      "meanFuelLeft": 0.6445374527736425,
+      "meanPadMiss": 3.414809914660338,
+      "outcomes": {
+       "LANDED": 331,
+       "HARD LANDING": 169
+      }
+     },
+     {
+      "run": "windseed3",
+      "successRate": 0.44,
+      "meanTouchdownVy": 0.9385104787790038,
+      "meanFuelLeft": 0.5706758264642497,
+      "meanPadMiss": 2.2513374834828705,
+      "outcomes": {
+       "LANDED": 220,
+       "HARD LANDING": 210,
+       "LOSS OF CONTROL": 69,
+       "PLATFORM COLLISION": 1
+      }
+     },
+     {
+      "run": "windseed4",
+      "successRate": 0.748,
+      "meanTouchdownVy": 0.39838847736584976,
+      "meanFuelLeft": 0.5789092410142659,
+      "meanPadMiss": 6.054129377970781,
+      "outcomes": {
+       "HARD LANDING": 113,
+       "LANDED": 374,
+       "HULL STRIKE": 7,
+       "PLATFORM COLLISION": 5,
+       "TIP-OVER": 1
+      }
+     },
+     {
+      "run": "windseed5",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "TIMEOUT": 454,
+       "HULL STRIKE": 46
+      }
+     }
+    ]
+   },
+   {
+    "name": "Sensor noise sigma = 0.10",
+    "meanSuccess": 0.422,
+    "perRun": [
+     {
+      "run": "windseed1",
+      "successRate": 0.814,
+      "meanTouchdownVy": 0.7492827295758715,
+      "meanFuelLeft": 0.4894377691692903,
+      "meanPadMiss": 2.6015072325507744,
+      "outcomes": {
+       "HARD LANDING": 93,
+       "LANDED": 407
+      }
+     },
+     {
+      "run": "windseed2",
+      "successRate": 0.464,
+      "meanTouchdownVy": 1.4256917785583185,
+      "meanFuelLeft": 0.6312639168262477,
+      "meanPadMiss": 2.158580179047633,
+      "outcomes": {
+       "LANDED": 232,
+       "HARD LANDING": 268
+      }
+     },
+     {
+      "run": "windseed3",
+      "successRate": 0.182,
+      "meanTouchdownVy": 0.9239527091046367,
+      "meanFuelLeft": 0.5555648463621734,
+      "meanPadMiss": 3.2360285516914686,
+      "outcomes": {
+       "HARD LANDING": 326,
+       "LOSS OF CONTROL": 77,
+       "LANDED": 91,
+       "PLATFORM COLLISION": 5,
+       "TIMEOUT": 1
+      }
+     },
+     {
+      "run": "windseed4",
+      "successRate": 0.582,
+      "meanTouchdownVy": 1.0937172913955735,
+      "meanFuelLeft": 0.6135357574790374,
+      "meanPadMiss": 7.152875317889746,
+      "outcomes": {
+       "HARD LANDING": 191,
+       "LANDED": 291,
+       "HULL STRIKE": 15,
+       "PLATFORM COLLISION": 3
+      }
+     },
+     {
+      "run": "windseed5",
+      "successRate": 0.068,
+      "meanTouchdownVy": 0.486549561864922,
+      "meanFuelLeft": 0.499257523765308,
+      "meanPadMiss": 9.039512337287277,
+      "outcomes": {
+       "HULL STRIKE": 218,
+       "TIMEOUT": 197,
+       "LANDED": 34,
+       "HARD LANDING": 49,
+       "PLATFORM COLLISION": 2
+      }
+     }
+    ]
+   },
+   {
+    "name": "Mars (g = 3.72, thin air)",
+    "meanSuccess": 0.0504,
+    "perRun": [
+     {
+      "run": "windseed1",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "TIMEOUT": 54,
+       "LOSS OF CONTROL": 433,
+       "HARD LANDING": 13
+      }
+     },
+     {
+      "run": "windseed2",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "HARD LANDING": 324,
+       "PLATFORM COLLISION": 175,
+       "LOSS OF CONTROL": 1
+      }
+     },
+     {
+      "run": "windseed3",
+      "successRate": 0.252,
+      "meanTouchdownVy": 1.2875947073227683,
+      "meanFuelLeft": 0.8031291510067117,
+      "meanPadMiss": 1.0453233451629231,
+      "outcomes": {
+       "LANDED": 126,
+       "HARD LANDING": 243,
+       "LOSS OF CONTROL": 130,
+       "PLATFORM COLLISION": 1
+      }
+     },
+     {
+      "run": "windseed4",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "TIMEOUT": 396,
+       "LOSS OF CONTROL": 94,
+       "HARD LANDING": 10
+      }
+     },
+     {
+      "run": "windseed5",
+      "successRate": 0,
+      "meanTouchdownVy": null,
+      "meanFuelLeft": null,
+      "meanPadMiss": null,
+      "outcomes": {
+       "TIMEOUT": 500
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

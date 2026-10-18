@@ -1,0 +1,15 @@
+{
+  "name": "propulsive-landing-testbed",
+  "version": "1.0.0",
+  "description": "Neuroevolution of a 3-DoF propulsive lander: RK4 rigid-body physics, an MLP controller and a genetic algorithm, all in dependency-free JavaScript.",
+  "private": true,
+  "license": "MIT",
+  "keywords": ["neuroevolution", "genetic-algorithm", "rocket-landing", "rk4", "simulation", "control", "canvas"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node --test",
+    "train": "node tools/train-headless.js --seed 1 --gens 150 --out docs/data/seed1",
+    "benchmark": "node tools/benchmark.js",
+    "figures": "python3 tools/make_figures.py"
+  }
+}
